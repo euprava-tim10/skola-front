@@ -12,12 +12,12 @@ export class AuthManagerService {
 
   loginUserAndRedirect(token: string) {
     localStorage.setItem('token', token);
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/home');
   }
 
   logoutUserAndRedirect() {
     localStorage.removeItem('token');
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/home');
   }
 
   getToken() {
