@@ -17,4 +17,16 @@ export class HomeComponent implements OnInit{
   isLoggedIn() {
     return this.authManagerService.isLoggedIn();
   }
+
+  isAdmin() {
+    return this.authManagerService.isAdmin();
+  }
+
+  isStudent() {
+    return this.authManagerService.isStudent();
+  }
+
+  isAnonymous() {
+    return this.authManagerService.isAnonymous();
+  }
 }

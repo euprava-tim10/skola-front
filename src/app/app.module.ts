@@ -10,6 +10,12 @@ import {RouterModule} from "@angular/router";
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { StudentPanelComponent } from './components/student-panel/student-panel.component';
+import { AnonymousPanelComponent } from './components/anonymous-panel/anonymous-panel.component';
+import { AdminContestsComponent } from './pages/admin-contests/admin-contests.component';
+import { AdminStudentsComponent } from './pages/admin-students/admin-students.component';
+import { NewContestComponent } from './pages/new-contest/new-contest.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { HomeComponent } from './pages/home/home.component';
     RedirectComponent,
     NotFoundComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    AdminPanelComponent,
+    StudentPanelComponent,
+    AnonymousPanelComponent,
+    AdminContestsComponent,
+    AdminStudentsComponent,
+    NewContestComponent
   ],
   imports: [
     BrowserModule,

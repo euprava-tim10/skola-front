@@ -1,2 +1,3 @@
-<p>home works!</p>
-<p *ngIf="isLoggedIn()">JMBG: {{principal.username}}</p>
+<app-anonymous-panel *ngIf="isAnonymous()"></app-anonymous-panel>
+<app-admin-panel *ngIf="isAdmin()"></app-admin-panel>
+<app-student-panel *ngIf="isStudent()"></app-student-panel>
