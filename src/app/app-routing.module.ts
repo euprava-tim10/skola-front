@@ -8,6 +8,8 @@ import {IsAdminGuard} from "./auth/guards/is-admin.guard";
 import {AdminContestsComponent} from "./pages/admin-contests/admin-contests.component";
 import {AdminStudentsComponent} from "./pages/admin-students/admin-students.component";
 import {NewContestComponent} from "./pages/new-contest/new-contest.component";
+import {ContestComponent} from "./pages/contest/contest.component";
+import {IsLoggedInGuard} from "./auth/guards/is-logged-in.guard";
 
 const routes: Routes = [
   {
@@ -24,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'admin/students', component: AdminStudentsComponent, canActivate: [IsAdminGuard]
+  },
+  {
+    path: 'contests/:id', component: ContestComponent, canActivate: [IsLoggedInGuard]
   },
   {
     path: '', redirectTo: 'home', pathMatch:'full'

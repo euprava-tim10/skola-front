@@ -16,6 +16,7 @@ import { AnonymousPanelComponent } from './components/anonymous-panel/anonymous-
 import { AdminContestsComponent } from './pages/admin-contests/admin-contests.component';
 import { AdminStudentsComponent } from './pages/admin-students/admin-students.component';
 import { NewContestComponent } from './pages/new-contest/new-contest.component';
+import { ContestComponent } from './pages/contest/contest.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NewContestComponent } from './pages/new-contest/new-contest.component';
     AnonymousPanelComponent,
     AdminContestsComponent,
     AdminStudentsComponent,
-    NewContestComponent
+    NewContestComponent,
+    ContestComponent
   ],
   imports: [
     BrowserModule,

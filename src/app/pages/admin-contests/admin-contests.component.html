@@ -5,8 +5,29 @@
     </div>
   </div>
   <div class="row mt-5">
-    <table>
-
+    <table class="table table-striped table-bordered text-center">
+      <thead >
+      <tr>
+        <th scope="col">School Type</th>
+        <th scope="col">School Name</th>
+        <th scope="col">School Place</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contest of contests">
+        <td>{{contest.school?.type}}</td>
+        <td>{{contest.school?.name}}</td>
+        <td>{{contest.school?.place}}</td>
+        <td>{{contest.startDate}}</td>
+        <td>{{contest.endDate}}</td>
+        <td>
+          <a class="btn btn-info" [routerLink]="['/contests', contest.id]" role="button">Details</a>
+        </td>
+      </tr>
+      </tbody>
     </table>
   </div>
 </div>
