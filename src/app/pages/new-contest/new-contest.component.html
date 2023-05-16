@@ -4,6 +4,7 @@
       <thead >
       <tr>
         <th scope="col">Course</th>
+        <th scope="col">Text</th>
         <th scope="col">Quota</th>
       </tr>
       </thead>
@@ -17,7 +18,10 @@
       </tbody>
       <tbody *ngIf="isPrimarySchool">
       <tr>
-        <td>PRIMARY SCHOOL QUOTA</td>
+        <td>PRIMARY SCHOOL</td>
+        <td>
+          <input type="text" [value]="contest.text" (input)="onInputText($event)">
+        </td>
         <td>
           <input type="number" min="0" (input)="onInputPrimarySchoolQuota($event)">
         </td>
@@ -26,9 +30,17 @@
     </table>
   </div>
   <div class="mb-3">
+    <span><b>Start Date:</b></span>
+    <input type="date" min="{{minEndDate | date:'yyyy-MM-dd'}}" (input)="onInputStartDate($event)" value="{{minEndDate | date:'yyyy-MM-dd'}}">
+  </div>
+  <div class="mb-3">
+    <span><b>End Date:</b></span>
     <input type="date" min="{{minEndDate | date:'yyyy-MM-dd'}}" (input)="onInputEndDate($event)" value="{{minEndDate | date:'yyyy-MM-dd'}}">
   </div>
   <div>
+    <div *ngIf="error">
+      <span>The end date must be after the start date.</span>
+    </div>
     <button (click)="onCreateContest()" type="button" class="btn btn-success">Create Contest</button>
   </div>
 </div>

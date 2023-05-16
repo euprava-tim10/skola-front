@@ -6,6 +6,7 @@ export interface Contest {
   school:School | undefined;
   quotas: CourseQuota[];
   primarySchoolQuota:number;
+  text: string;
   startDate:Date;
   endDate:Date;
 }

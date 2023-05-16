@@ -18,12 +18,14 @@ export class NewContestComponent {
     school: undefined,
     quotas: [],
     primarySchoolQuota:0,
+    text: '',
     startDate:new Date(),
     endDate:new Date()
   }
 
   minEndDate = new Date(Date.now() + (3600 * 1000 * 24));
   isPrimarySchool:boolean = false;
+  error:boolean = false;
 
   constructor(
     private schoolService: SchoolService,
@@ -59,11 +61,23 @@ export class NewContestComponent {
     this.contest.primarySchoolQuota = Number((e.target as HTMLInputElement).value);
   }
 
+  onInputText( e: Event) {
+    this.contest.text = String((e.target as HTMLInputElement).value);
+  }
+
+  onInputStartDate(e: Event) {
+    this.contest.startDate = new Date((e.target as HTMLInputElement).value);
+  }
+
   onInputEndDate(e: Event) {
     this.contest.endDate = new Date((e.target as HTMLInputElement).value);
   }
 
   onCreateContest() {
+    if (this.contest.startDate.toISOString() > this.contest.endDate.toISOString()) {
+      this.error = true;
+      return
+    }
     this.schoolService.createContest(this.principal.schoolId, this.contest).subscribe(contest => {
       this.router.navigateByUrl('/admin/contests');
     });
