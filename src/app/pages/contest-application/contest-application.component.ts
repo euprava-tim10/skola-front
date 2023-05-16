@@ -60,7 +60,6 @@ export class ContestApplicationComponent {
   }
 
   onApplication() {
-
     this.contestService.createApplication(this.contestId, this.contestApplication).subscribe(id => {
       this.router.navigateByUrl(`student/contests`);
     });
