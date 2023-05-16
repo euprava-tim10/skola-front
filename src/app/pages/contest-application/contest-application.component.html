@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row align-items-center mt-3 mb-3">
+    <div class="col-6 mx-auto">
+      <div class="card shadow border">
+        <div class="card-body d-flex flex-column align-items-center">
+          <div *ngIf="!isPrimarySchool">
+            <p><b>First Wish</b></p>
+            <select (input)="onSetCourse($event)">
+              <option *ngFor="let quota of contest?.quotas"
+                      [value]="quota.course?.id">
+                {{ quota.course?.name }}
+              </option>
+            </select>
+          </div>
+          <div *ngIf="isPrimarySchool">
+            <p><b>Primary School Contest</b></p>
+            <tbody>
+            <tr>
+              <td>Child First Name</td>
+              <td>
+                <input type="text" (input)="onInputFirstName($event)">
+              </td>
+            </tr>
+            <tr>
+              <td>Child Last Name</td>
+              <td>
+                <input type="text" (input)="onInputLastName($event)">
+              </td>
+            </tr>
+            <tr>
+              <td>Child JMBG</td>
+              <td>
+                <input type="text" (input)="onInputJmbg($event)">
+              </td>
+            </tr>
+            </tbody>
+          </div>
+          <button class="btn btn-success mt-2" (click)="onApplication()">
+            Application
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

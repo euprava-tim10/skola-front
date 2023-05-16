@@ -11,9 +11,17 @@
       <tbody *ngIf="!isPrimarySchool">
       <tr *ngFor="let quota of contest.quotas">
         <td>{{quota.course?.name}}</td>
+        <td></td>
         <td>
           <input type="number" min="0" [value]="quota.quota" (input)="onInputQuota(quota, $event)">
         </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="text" [value]="contest.text" (input)="onInputText($event)">
+        </td>
+        <td></td>
       </tr>
       </tbody>
       <tbody *ngIf="isPrimarySchool">

@@ -9,4 +9,5 @@ export interface Contest {
   text: string;
   startDate:Date;
   endDate:Date;
+  contestStatus:string;
 }

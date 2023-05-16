@@ -10,6 +10,9 @@ import {AdminStudentsComponent} from "./pages/admin-students/admin-students.comp
 import {NewContestComponent} from "./pages/new-contest/new-contest.component";
 import {ContestComponent} from "./pages/contest/contest.component";
 import {IsLoggedInGuard} from "./auth/guards/is-logged-in.guard";
+import {IsStudentGuard} from "./auth/guards/is-student.guard";
+import {StudentContestsComponent} from "./pages/student-contests/student-contests.component";
+import {ContestApplicationComponent} from "./pages/contest-application/contest-application.component";
 
 const routes: Routes = [
   {
@@ -26,6 +29,12 @@ const routes: Routes = [
   },
   {
     path: 'admin/students', component: AdminStudentsComponent, canActivate: [IsAdminGuard]
+  },
+  {
+    path: 'student/contests', component: StudentContestsComponent, canActivate: [IsStudentGuard]
+  },
+  {
+    path: 'student/contests/:id/application', component: ContestApplicationComponent, canActivate: [IsStudentGuard]
   },
   {
     path: 'contests/:id', component: ContestComponent, canActivate: [IsLoggedInGuard]

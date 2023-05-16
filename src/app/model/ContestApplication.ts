@@ -8,4 +8,5 @@ export interface ContestApplication {
   student:Student | undefined;
   rangPoints: number;
   firstWish: Course | undefined;
+  applicationStatus: string
 }

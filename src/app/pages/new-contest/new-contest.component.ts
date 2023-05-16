@@ -20,7 +20,8 @@ export class NewContestComponent {
     primarySchoolQuota:0,
     text: '',
     startDate:new Date(),
-    endDate:new Date()
+    endDate:new Date(),
+    contestStatus: 'AKTIVAN'
   }
 
   minEndDate = new Date(Date.now() + (3600 * 1000 * 24));
