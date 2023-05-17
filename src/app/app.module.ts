@@ -19,6 +19,8 @@ import { NewContestComponent } from './pages/new-contest/new-contest.component';
 import { ContestComponent } from './pages/contest/contest.component';
 import { ContestApplicationComponent } from './pages/contest-application/contest-application.component';
 import { StudentContestsComponent } from './pages/student-contests/student-contests.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { DiplomaDetailsComponent } from './components/diploma-details/diploma-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { StudentContestsComponent } from './pages/student-contests/student-conte
     NewContestComponent,
     ContestComponent,
     ContestApplicationComponent,
-    StudentContestsComponent
+    StudentContestsComponent,
+    ProfileComponent,
+    DiplomaDetailsComponent
   ],
   imports: [
     BrowserModule,

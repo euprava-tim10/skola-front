@@ -45,6 +45,19 @@ export class AuthManagerService {
     return tokenPayload;
   }
 
+  getUserJmbg() {
+    let token = localStorage.getItem('token');
+
+    if(token == null)
+      return false;
+
+    let tokenParts = token.split('.');
+    let tokenPayloadString = this.base64UrlDecode(tokenParts[1]);
+    let tokenPayload = JSON.parse(tokenPayloadString);
+
+    return tokenPayload.username;
+  }
+
   isAdmin() {
     let token = localStorage.getItem('token');
 

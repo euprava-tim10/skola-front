@@ -5,6 +5,9 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
       </li>
+      <li class="nav-item active" *ngIf="isStudent()">
+        <button type="button" class="btn btn-link nav-link" (click)="onClickMyProfile()">My Profile</button>
+      </li>
     </ul>
   </div>
   <div class="bg-light clearfix">

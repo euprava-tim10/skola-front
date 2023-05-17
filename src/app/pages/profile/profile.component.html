@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm text-center">
+      <button class="btn btn-primary" (click)="getPrimarySchoolDiploma()">Get Primary School Diploma</button>
+    </div>
+    <div class="col-sm text-center">
+      <button class="btn btn-primary" (click)="getHighSchoolDiploma()">Get High School Diploma</button>
+    </div>
+  </div>
+  <div>
+    <app-diploma-details [diploma]="diploma" [errorMessage]="errorMessage" [error]="error" *ngIf="showDiplomaDetails"></app-diploma-details>
+  </div>
+</div>
+
