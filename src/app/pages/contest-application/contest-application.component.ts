@@ -60,8 +60,19 @@ export class ContestApplicationComponent {
   }
 
   onApplication() {
-    this.contestService.createApplication(this.contestId, this.contestApplication).subscribe(id => {
-      this.router.navigateByUrl(`student/contests`);
+    this.contestService.createApplication(this.contestId, this.contestApplication).subscribe({
+      next:(id) => {
+        if(id != 0) {
+          alert("Uspesno si se prijavio")
+          this.router.navigateByUrl(`student/contests`);
+        }
+        if(id == 0) {
+          alert("Neuspesna prijava!")
+        }
+      },
+      error:() => {
+        alert("Neuspesna prijava!")
+      }
     });
   }
 }

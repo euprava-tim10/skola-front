@@ -79,8 +79,14 @@ export class NewContestComponent {
       this.error = true;
       return
     }
-    this.schoolService.createContest(this.principal.schoolId, this.contest).subscribe(contest => {
-      this.router.navigateByUrl('/admin/contests');
+    this.schoolService.createContest(this.principal.schoolId, this.contest).subscribe( {
+      next:(data) => {
+        alert("Uspesno kreiran konkurs")
+        this.router.navigateByUrl('/admin/contests');
+      },
+      error:() => {
+        alert("Greska pri kreiranju konkursa.Proverite da li vec postoji konkurs")
+      }
     });
   }
 }
