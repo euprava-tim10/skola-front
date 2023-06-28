@@ -1,1 +1,24 @@
-<p>admin-students works!</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>JMBG</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of studenti">
+    <td>{{ student.firstName }}</td>
+    <td>{{ student.lastName }}</td>
+    <td>{{ student.jmbg }}</td>
+    <td>
+      <a class="btn btn-info" role="button" [href]="'/profile/' + student.jmbg">Details</a>
+    </td>
+    <td>
+      <a class="btn btn-info" role="button" [href]="'/student/' + student.jmbg + '/diploma/issue'">Issue Diploma</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -4,6 +4,7 @@ import {environment} from "../../../environments/environment";
 import {Contest} from "../../model/Contest";
 import {Course} from "../../model/Course";
 import {School} from "../../model/School";
+import {Student} from "../../model/Student";
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class SchoolService {
 
   createContest(schoolId: number, contest: Contest) {
     return this.httpClient.post<Contest>(`${this.server}/api/skole/${schoolId}/konkursi`, JSON.stringify(contest),this.options);
+  }
+
+  getSchoolStudents(schoolId: number) {
+    return this.httpClient.get<Student[]>(`${this.server}/api/skole/${schoolId}/studenti`, this.options);
   }
 }

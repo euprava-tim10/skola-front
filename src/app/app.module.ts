@@ -22,6 +22,7 @@ import { StudentContestsComponent } from './pages/student-contests/student-conte
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DiplomaDetailsComponent } from './components/diploma-details/diploma-details.component';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
+import { IssueDiplomaComponent } from './pages/issue-diploma/issue-diploma.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RankingPageComponent } from './pages/ranking-page/ranking-page.componen
     StudentContestsComponent,
     ProfileComponent,
     DiplomaDetailsComponent,
-    RankingPageComponent
+    RankingPageComponent,
+    IssueDiplomaComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@
     <th>Lastname</th>
     <th>Rang points</th>
     <th>Status</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -15,6 +16,9 @@
     <td>{{ application.student?.lastName }}</td>
     <td>{{ application.rangPoints }}</td>
     <td>{{ application.applicationStatus }}</td>
+    <td>
+      <a class="btn btn-info" role="button" [href]="'/profile/' + application.student?.jmbg">Details</a>
+    </td>
   </tr>
   </tbody>
 </table>
