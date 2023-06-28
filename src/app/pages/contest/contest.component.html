@@ -20,7 +20,7 @@
   <tr>
     <th scope="col">Course</th>
     <th scope="col">Quota</th>
-    <th scope="col" *ngIf="!isPrimarySchool"></th>
+    <th scope="col"></th>
   </tr>
   </thead>
   <tbody *ngIf="!isPrimarySchool">
@@ -36,6 +36,9 @@
   <tr>
     <td>PRIMARY SCHOOL</td>
     <td>{{contest?.primarySchoolQuota}}</td>
+    <td>
+      <a class="btn btn-info" [routerLink]="['/contests', contest?.id, 'courses', 0, 'ranking']" role="button">Details</a>
+    </td>
   </tr>
   </tbody>
 </table>

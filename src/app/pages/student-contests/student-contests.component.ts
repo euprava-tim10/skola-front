@@ -18,4 +18,6 @@ export class StudentContestsComponent {
   ngOnInit() {
     this.contestService.getActiveContests().subscribe(c => this.contests = c);
   }
+
+    protected readonly undefined = undefined;
 }

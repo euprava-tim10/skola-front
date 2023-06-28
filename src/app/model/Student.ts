@@ -1,5 +1,4 @@
 import {School} from "./School";
-import {ContestApplication} from "./ContestApplication";
 
 export interface Student {
   id: number;
@@ -9,5 +8,4 @@ export interface Student {
   course: string;
   school: School | undefined;
   gpa:Map<string,number>;
-  applications:ContestApplication[];
 }

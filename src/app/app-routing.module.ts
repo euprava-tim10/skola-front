@@ -14,6 +14,7 @@ import {IsStudentGuard} from "./auth/guards/is-student.guard";
 import {StudentContestsComponent} from "./pages/student-contests/student-contests.component";
 import {ContestApplicationComponent} from "./pages/contest-application/contest-application.component";
 import {ProfileComponent} from "./pages/profile/profile.component";
+import {RankingPageComponent} from "./pages/ranking-page/ranking-page.component";
 
 const routes: Routes = [
   {
@@ -42,6 +43,9 @@ const routes: Routes = [
   },
   {
     path: 'profile/:jmbg', component: ProfileComponent, canActivate: [IsLoggedInGuard]
+  },
+  {
+    path: 'contests/:id/courses/:courseId/ranking', component: RankingPageComponent, canActivate: [IsLoggedInGuard]
   },
   {
     path: '', redirectTo: 'home', pathMatch:'full'

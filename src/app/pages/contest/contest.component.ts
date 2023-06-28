@@ -28,4 +28,6 @@ export class ContestComponent {
       });
     });
   }
+
+    protected readonly undefined = undefined;
 }

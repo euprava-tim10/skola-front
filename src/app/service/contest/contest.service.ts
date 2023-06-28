@@ -3,6 +3,7 @@ import {environment} from "../../../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Contest} from "../../model/Contest";
 import {CreateContestApplicationDTO} from "../../model/dto/CreateContestApplicationDTO";
+import {ContestApplication} from "../../model/ContestApplication";
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,15 @@ export class ContestService {
 
   createApplication(contestId: number, contestApplication: CreateContestApplicationDTO) {
     return this.httpClient.post<number>(`${this.server}/api/konkursi/${contestId}/prijave`, JSON.stringify(contestApplication), this.options);
+  }
+
+  getContestApplicationsByCourse(contestId: number, courseId: number) {
+    return this.httpClient.get<ContestApplication[]>(
+      `${this.server}/api/konkursi/${contestId}/smerovi/${courseId}/prijave`, this.options);
+  }
+
+  getContestApplications(contestId: number) {
+    return this.httpClient.get<ContestApplication[]>(
+      `${this.server}/api/konkursi/${contestId}/prijave`, this.options);
   }
 }
