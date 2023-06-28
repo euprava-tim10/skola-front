@@ -16,6 +16,7 @@
         <th scope="col">End Date</th>
         <th scope="col">Status</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
       </thead>
       <tbody>
@@ -29,6 +30,9 @@
         <td>{{contest.contestStatus}}</td>
         <td>
           <a class="btn btn-info" [routerLink]="['/contests', contest.id]" role="button">Details</a>
+        </td>
+        <td>
+          <button id="closeBtn" [disabled]="contest.contestStatus == 'ZATVOREN'" class="btn btn-info" (click)="onCloseContest(contest)" role="button">Close contest</button>
         </td>
       </tr>
       </tbody>

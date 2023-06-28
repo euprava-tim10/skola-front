@@ -38,4 +38,8 @@ export class ContestService {
     return this.httpClient.get<ContestApplication[]>(
       `${this.server}/api/konkursi/${contestId}/prijave`, this.options);
   }
+
+  closeContest(contestId: number) {
+    return this.httpClient.put(`${this.server}/api/konkursi/${contestId}/zatvori`, '', this.options);
+  }
 }
