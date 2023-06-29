@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Text</th>
+    <th>Date</th>
+    <th>Link</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let notification of notifications">
+    <td>{{ notification.text }}</td>
+    <td>{{ notification.date }}</td>
+    <td><a href="{{notification.link}}">Link</a></td>
+  </tr>
+  </tbody>
+</table>

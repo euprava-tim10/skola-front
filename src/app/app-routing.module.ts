@@ -16,6 +16,7 @@ import {ContestApplicationComponent} from "./pages/contest-application/contest-a
 import {ProfileComponent} from "./pages/profile/profile.component";
 import {RankingPageComponent} from "./pages/ranking-page/ranking-page.component";
 import {IssueDiplomaComponent} from "./pages/issue-diploma/issue-diploma.component";
+import {NotificationsComponent} from "./pages/notifications/notifications.component";
 
 const routes: Routes = [
   {
@@ -50,6 +51,9 @@ const routes: Routes = [
   },
   {
     path: 'student/:jmbg/diploma/issue', component: IssueDiplomaComponent, canActivate: [IsAdminGuard]
+  },
+  {
+    path: 'notifications', component: NotificationsComponent, canActivate: [IsLoggedInGuard]
   },
   {
     path: '', redirectTo: 'home', pathMatch:'full'

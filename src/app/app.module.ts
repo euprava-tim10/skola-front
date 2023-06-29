@@ -23,6 +23,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DiplomaDetailsComponent } from './components/diploma-details/diploma-details.component';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 import { IssueDiplomaComponent } from './pages/issue-diploma/issue-diploma.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { NotificationsComponent } from './pages/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +45,15 @@ import { IssueDiplomaComponent } from './pages/issue-diploma/issue-diploma.compo
     ProfileComponent,
     DiplomaDetailsComponent,
     RankingPageComponent,
-    IssueDiplomaComponent
+    IssueDiplomaComponent,
+    NotificationsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

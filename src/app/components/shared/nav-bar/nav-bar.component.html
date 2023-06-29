@@ -8,6 +8,9 @@
       <li class="nav-item active" *ngIf="isStudent()">
         <button type="button" class="btn btn-link nav-link" (click)="onClickMyProfile()">My Profile</button>
       </li>
+      <li class="nav-item active" *ngIf="isLoggedIn()">
+        <a type="button" class="btn btn-link nav-link" href="/notifications">Notifications</a>
+      </li>
     </ul>
   </div>
   <div class="bg-light clearfix">

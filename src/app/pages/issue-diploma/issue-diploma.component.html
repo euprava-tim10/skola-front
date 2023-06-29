@@ -5,39 +5,54 @@
         <div class="card-body d-flex flex-column align-items-center">
           <div *ngIf="!diploma">
             <p><b>Enter GPA</b></p>
-            <tbody>
-            <tr>
-              <td>1.</td>
-              <td>
-                <input type="number" (input)="onInputFirst($event)">
-              </td>
-            </tr>
-            <tr>
-              <td>2.</td>
-              <td>
-                <input type="number" (input)="onInputSecond($event)">
-              </td>
-            </tr>
-            <tr>
-              <td>3.</td>
-              <td>
-                <input type="number" (input)="onInputThird($event)">
-              </td>
-            </tr>
-            <tr>
-              <td>4.</td>
-              <td>
-                <input type="number" (input)="onInputFourth($event)">
-              </td>
-            </tr>
-            </tbody>
+            <form [formGroup]="gpaForm" (ngSubmit)="onIssue()">
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>
+                    <input type="number" min="1.5" max="5" formControlName="1">
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    <input type="number" min="1.5" max="5" formControlName="2">
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    <input type="number" min="1.5" max="5" formControlName="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    <input type="number" min="1.5" max="5" formControlName="4">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Profession</td>
+                  <td>
+                    <select class="form-select" id="select" (change)="setProfession($any($event.target!).value)">
+                      <option [value]="'OTHER'" selected>OTHER</option>
+                      <option [value]="'ADMINISTRATION'">ADMINISTRATION</option>
+                      <option [value]="'ECONOMICS_FINANCE_AND_INSURANCE'">ECONOMICS_FINANCE_AND_INSURANCE</option>
+                      <option [value]="'ELECTRICAL_ENGINEERING_AND_TELECOMMUNICATIONS'">ELECTRICAL_ENGINEERING_AND_TELECOMMUNICATIONS</option>
+                      <option [value]="'MEDICINE'">MEDICINE</option>
+                      <option [value]="'ARCHITECTURE_CONSTRUCTION_AND_GEODESY'">ARCHITECTURE_CONSTRUCTION_AND_GEODESY</option>
+                    </select>
+                  </td>
+                </tr>
+                <button class="btn btn-success mt-2" type="submit">
+                  Issue
+                </button>
+              </tbody>
+            </form>
           </div>
           <div *ngIf="diploma">
             <p><b>The Student already has a diploma!</b></p>
           </div>
-          <button class="btn btn-success mt-2" (click)="onIssue()">
-            Application
-          </button>
         </div>
       </div>
     </div>
